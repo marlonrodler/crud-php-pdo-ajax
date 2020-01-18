@@ -7,7 +7,7 @@
 
         <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
 
-        <title>Document</title>
+        <title>CRUD PHP</title>
     </head>
     <body>
 
