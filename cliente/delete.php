@@ -17,7 +17,7 @@ final class classDelete extends classConexao{
             $insertDB=$this->con->prepare("DELETE FROM cliente WHERE id=?");
             $insertDB->execute(array($id));
             $data->status = "success";
-            $data->msg = "delete with success";
+            $data->msg = "Deletado com sucesso!";
             echo json_encode($data);
 
         }catch(PDOException $erro){

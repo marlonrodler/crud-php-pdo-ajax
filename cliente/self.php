@@ -30,7 +30,7 @@ final class classSelectId extends classConexao{
         }
         
         $data->status = "success";
-        $data->msg = "select with success";
+        $data->msg = "Selecionado com sucesso!";
         $myJSON = json_encode($data); 
 
         echo $myJSON;  

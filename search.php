@@ -2,34 +2,117 @@
     include("header.php");
 ?>
 
-    <form id="formSelect">
-        <input type="text" id="nome" placeholder="nome" autofocus>
-        <input type="text" id="idade" placeholder="idade">
-        <input type="text" id="cpf" placeholder="cpf">
-        <input type="text" id="sexo" placeholder="sexo">
-        <input type="text" id="cidade" placeholder="cidade">
-        <input type="text" id="estado" placeholder="estado">
-        <input type="submit" id="enviar">
-    </form>
+    <div class="container">
+        
+        <div class="row justify-content-center my-4 col-12">
+            <h3>Pesquisar Cliente</h3>
+        </div>
+        
+            <div id="formSelect" class="row justify-content-center col-12">
 
-    <p id="resultado"></p>
+                    <div id="defaultSearch">
 
-    <table id="table_id">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Idade</th>
-                <th>CPF</th>
-                <th>Sexo</th>
-                <th>Cidade</th>
-                <th>Estado</th>
-                <th>Deletar</th>
-            </tr>
-        </thead>
-        <tbody id="tbody_id">
+                        <div class="form-group">
 
-        </tbody>
-    </table>
+                            <input type="text" id="termo" placeholder="Buscar" class="form-control" required autofocus>
+
+                        </div>
+
+                    </div>
+
+                    <div id="advancedSearch" style="display: none">
+
+                        <div class="form-row">
+
+                            <div class="form-group col-sm-6">
+                                <input type="text" id="nome" placeholder="nome" class="form-control" autofocus required>
+                            </div>
+
+                            <div class="form-group col-sm-2">
+                                <input type="text" id="idade" placeholder="idade" class="form-control" required>
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <input type="text" id="cpf" placeholder="cpf" class="form-control" required>
+                            </div>
+
+                        </div>
+
+                    
+                        <div class="form-row">
+
+                            <div class="form-group col-sm-2">
+                                <input type="text" id="sexo" placeholder="sexo" class="form-control" required>
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <input type="text" id="cidade" placeholder="cidade" class="form-control" required>
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <input type="text" id="estado" placeholder="estado" class="form-control" required>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    
+
+                    <div class="form-row mt-3 justify-content-center col-12">
+
+                        <div class="form-group">
+
+                                <a href="" class="my-4 col-12" onclick="openFilter(this,event);">Filtro Avançado</a>
+                                
+                        </div>
+
+                        <div class="form-group mr-3">
+
+                            <input type="submit" class="btn btn-primary ml-1" id="btnId" value="Buscar">
+
+                        </div>
+                            
+                        <div class="form-group">
+
+                            <input type="submit" id="enviar" class="btn btn-secondary" value="Voltar" onclick="voltarPg();">
+                            
+                        </div>
+                            
+                    </div>
+
+            </div>
+
+    </div>
+
+    <div class="container mt-5">
+        <table id="table_id" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Alterar</th>
+                    <th scope="col">Deletar</th>
+                </tr>
+            </thead>
+            <tbody id="tbody_id">
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+
+        <div class="row justify-content-center my-4 col-12">
+            <p id="resultado"></p>
+        </div>
+    
+    </div>
 
 <?php
     include("footer.php");
@@ -58,7 +141,8 @@ $.ajax({
                             +cliente.sexo+"</td><td>"
                             +cliente.cidade+"</td><td>"
                             +cliente.estado+"</td><td>"
-                            +"<button onclick='deleteClient("+cliente.id+");'>Deletar</button></td></tr>"
+                            +"<a class='btn btn-warning' href='update.php?id="+cliente.id+"'>Alterar</td><td>"
+                            +"<button class='btn btn-danger' onclick='deleteClient("+cliente.id+");'>Deletar</button></td></tr>"
         }
         $("#resultado").html("");
         $("#tbody_id").html(html);
