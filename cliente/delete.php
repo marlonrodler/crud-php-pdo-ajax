@@ -14,8 +14,8 @@ final class classDelete extends classConexao{
 
             $id = $_POST["id"];
             
-            $insertDB=$this->con->prepare("DELETE FROM cliente WHERE id=?");
-            $insertDB->execute(array($id));
+            $deleteDB=$this->con->prepare("DELETE FROM cliente WHERE id=?");
+            $deleteDB->execute(array($id));
             $data->status = "success";
             $data->msg = "Deletado com sucesso!";
             echo json_encode($data);

@@ -20,13 +20,13 @@ final class classUpdate extends classConexao{
             $estado = $_POST["estado"];        
 
             
-            $listDB=$this->con->prepare("UPDATE cliente SET nome = :nome, 
+            $updateDB=$this->con->prepare("UPDATE cliente SET nome = :nome, 
                                                             idade = :idade, 
                                                             cpf = :cpf, 
                                                             sexo = :sexo, 
                                                             cidade = :cidade, 
                                                             estado = :estado WHERE id = :id");
-            $listDB->execute(array(
+            $updateDB->execute(array(
                                     ':id'   => $id,
                                     ':nome' => $nome,
                                     ':idade' => $idade,
