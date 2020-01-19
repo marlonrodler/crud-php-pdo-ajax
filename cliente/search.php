@@ -7,6 +7,7 @@ final class classSelect extends classConexao{
 
 
     public function selectFilter(){
+
         $data = (object) ['msg' => "", 'status' => "", 'clientes' => array()]; 
 
         $this->con = $this->conectaDB();

@@ -5,11 +5,11 @@ final class classInsert extends classConexao{
     
     
     public function insert(){
-        error_reporting(0);
-        ini_set("display_errors", 0 );
 
         try{
+            //criando um obj data recebendo msg e status em branco
             $data = (object) ['msg' => "", 'status' => ""]; 
+            //executando a funçao que faz a conexão com o banco
             $this->con = $this->conectaDB();
 
             $nome = $_POST["nome"];
@@ -19,12 +19,14 @@ final class classInsert extends classConexao{
             $cidade = $_POST["cidade"];
             $estado = $_POST["estado"];
             
-            $insertDB=$this->con->prepare("SELECT id FROM cliente WHERE cpf = ?");
-            $insertDB->execute(array($cpf));
+            $buscaDB=$this->con->prepare("SELECT id FROM cliente WHERE cpf = ?");
+            $buscaDB->execute(array($cpf));
 
-            $count = $insertDB->rowCount();
+            $count = $buscaDB->rowCount();
 
             if($count > 0){
+                //excessao a ser lançada caso o numero de linhas for maior que 0 - 
+                //quer dizer que foi encontrado um cpf igual
                 throw new Exception("CPF já cadastrado!");
             }
 

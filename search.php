@@ -15,6 +15,7 @@
                         <div class="form-group">
 
                             <input type="text" id="termo" placeholder="Buscar" class="form-control" required autofocus>
+                            <a href="search.php" class="float-right">Refresh</a>
 
                         </div>
 
@@ -54,6 +55,7 @@
                             </div>
 
                         </div>
+                        <a href="search.php" class="float-right">Refresh</a>
 
 
                     </div>

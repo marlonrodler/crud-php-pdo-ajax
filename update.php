@@ -52,7 +52,7 @@
             <div class="form-row ml-0 mt-3">
 
             <div class="form-group mr-3">
-                <input type="submit" id="enviar" class="btn btn-primary">
+                <input type="submit" id="enviar" class="btn btn-primary" value="Alterar">
             </div>
 
             <div class="form-group">

@@ -10,8 +10,8 @@
 
     <div class="row justify-content-center my-4 col-12">
 
-        <a href="add.php" class="mr-5">Adicionar Cliente</a>
-        <a href="search.php">Buscar Cliente</a>
+        <a href="add.php" class="btn btn-success mr-5">Adicionar Cliente</a>
+        <a href="search.php" class="btn btn-info">Buscar Cliente</a>
 
     </div>
     

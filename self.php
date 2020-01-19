@@ -3,6 +3,7 @@
 ?>
 
 <div class="container">
+    <div class='row justify-content-center my-5' id="nomeCliente"></div>
     <table id="table_id" class="table">
         <thead>
             <tr>
@@ -44,7 +45,9 @@
         data = JSON.parse(data);
         if(data.status == "success"){
             var html = "";
+            var divH3 ="";
             var cliente = data.cliente;
+            divH3+="<h3>"+cliente.nome+"</h3>"
             html+="<tr><td>"+cliente.nome+"</td><td>"
                                 +cliente.idade+"</td><td>"
                                 +cliente.cpf+"</td><td>"
@@ -55,6 +58,7 @@
                                 +"<button class='btn btn-danger' onclick='deleteClient("+cliente.id+");'>Deletar</button></td><td>"
                                 + "<a class='btn btn-secondary text-white' href='search.php'>Voltar</a></td></tr>"
             $("#resultado").html("");
+            $("#nomeCliente").html(divH3);
             $("#tbody_id").html(html);
         }else{
             $("#resultado").html("");
