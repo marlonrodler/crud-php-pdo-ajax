@@ -31,13 +31,11 @@ final class classSelectId extends classConexao{
         
         $data->status = "success";
         $data->msg = "Selecionado com sucesso!";
-        $myJSON = json_encode($data); 
-
-        echo $myJSON;  
+        echo json_encode($data); 
         
     }
 
 }
 
-$ex = new classSelectId;
-$ex->selectId();
+$slf = new classSelectId;
+$slf->selectId();

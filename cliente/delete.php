@@ -28,5 +28,5 @@ final class classDelete extends classConexao{
 
 }
 
-$ex = new classDelete;
-$ex->delete();
+$del = new classDelete;
+$del->delete();

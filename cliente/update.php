@@ -51,5 +51,5 @@ final class classUpdate extends classConexao{
 
 }
 
-$ex = new classUpdate;
-$ex->update();
+$upd = new classUpdate;
+$upd->update();

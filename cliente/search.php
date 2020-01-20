@@ -25,9 +25,6 @@ final class classSelect extends classConexao{
             $arrayValues[] = "%".$_POST["search_term"]."%";
         }else{
             if(isset($_POST["search_name"]) && $_POST["search_name"] > " "){
-                if($whereClause > " "){
-                    $whereClause = $whereClause . " AND ";
-                }
                 $whereClause = $whereClause . "nome LIKE ? "; 
                 $arrayValues[] = "%".$_POST["search_name"]."%";
             }
@@ -71,6 +68,7 @@ final class classSelect extends classConexao{
         if($whereClause > " "){
             $whereClause = "WHERE " . $whereClause;
         }
+
         $selectQuery = "SELECT * FROM cliente " . $whereClause;
         $listDB=$this->con->prepare($selectQuery);
         $listDB->execute($arrayValues);
@@ -98,7 +96,7 @@ final class classSelect extends classConexao{
 
 }
 
-$ex = new classSelect;
+$sch = new classSelect;
 
-$ex->selectFilter();
+$sch->selectFilter();
 
